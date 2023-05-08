@@ -25,7 +25,7 @@ module DeviseTokenAuth::Concerns::ResourceFinder
                   field_sanitized = resource_class.connection.quote_column_name(field)
                   resource_class.where("BINARY #{field_sanitized} = ? AND provider= ?", value, provider).first
                 else
-                  resource_class.dta_find_by(field => value, 'provider' => provider)
+                  resource_class.dta_find_by(field => value, 'provider' => field)
                 end
   end
 
