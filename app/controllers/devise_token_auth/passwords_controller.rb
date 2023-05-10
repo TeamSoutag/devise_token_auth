@@ -81,7 +81,7 @@ module DeviseTokenAuth
       return render_update_error_unauthorized unless @resource
 
       # make sure account doesn't use oauth2 provider
-      unless @resource.provider == 'email'
+      unless @resource.provider == 'email' || 'phone'
         return render_update_error_password_not_required
       end
 
